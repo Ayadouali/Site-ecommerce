@@ -41,8 +41,8 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="section-title text-center">
-						<h2 class="title">New Products</h2>
-						<p>There are many variations of passages of Lorem Ipsum available</p>
+						<h2 class="title">Nouveaux Produits</h2>
+						<p>Voici la liste de nos derniers produits</p>
 					</div>
 				</div>
 			</div>
@@ -63,18 +63,18 @@
 										<span class="new">New</span>
 									</span>
 									<div class="thumb">
-										<a href="single-product.html" class="image">
-											<img src="{{ asset ('assets/img/produit1.webp') }}" alt="Product">
-											<img class="hover-image" src="{{ asset ('assets/img/produit1.webp') }}" alt="Product">
+										<a href="{{ path('shop_index') }}" class="image">
+											<img src="/uploads/{{ item.illustration }}" alt="Product">
+											<img class="hover-image" src="/uploads/{{ item.illustration }}" alt="Product">
 										</a>
 									</div>
 									<div class="content">
 										<span class="category">
-											<a href="#">Accessories</a>
+											<a href="{{ path('shop_index') }}">Accessories</a>
 										</span>
 										<h5 class="title">
-											<a href="single-product.html">
-												{{ item.libelle }}
+											<a href="{{ path('shop_details',{slug: item.slug}) }}">
+												{{ item.categories }}
 											</a>
 										</h5>
 										<span class="price">
@@ -84,16 +84,16 @@
 									</div>
 									<div class="actions">
 										<button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart">
-											<i class="fa-solid fa-basket-shopping"></i>
+											<i class="pe-7s-shopbag"></i>
 										</button>
 										<button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist">
-											<i class="fa-solid fa-heart"></i>
+											<i class="pe-7s-like"></i>
 										</button>
 										<button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal">
-											<i class="fa-solid fa-eye"></i>
+											<i class="pe-7s-look"></i>
 										</button>
 										<button class="action compare" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal-Compare">
-											<i class="fa-solid fa-code-compare"></i>
+											<i class="pe-7s-refresh-2"></i>
 										</button>
 									</div>
 								</div>
@@ -106,9 +106,7 @@
 			</div>
 		</div>
 	</div>
-</div>
-<!--2nd Liste des produits-->
-<div class="banner-area style-three pb-100px">
+</div><!--2nd Liste des produits--><div class="banner-area style-three pb-100px">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
@@ -141,6 +139,4 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-<!--3eme Liste des produits-->{% endblock %}
+</div><!--3eme Liste des produits-->{% endblock %}
